@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mini leaderboard</title>
+<style>
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: green;
+  border-style: solid;
+  border-color: green;
+}
+
+.button {
+  background-color: #0000;
+  color: Black;
+  border-style: solid;
+  border-color: black;
+}
+
+#container {
+  width: 600px;
+  height: auto;
+}
+
+.row {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #AFAFAF;
+}
+
+.name {
+  position: relative;
+  display: inline-block;
+  width: 75%;
+  line-height: 45px;
+}
+
+.score {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+}
+
+.row:nth-child(1) {
+  background: gold;
+}
+
+.row:nth-child(2) {
+  background: #c0c0c0;
+}
+
+.row:nth-child(3) {
+  background: #cd7f32;
+}
+</style>
+</head>
+<body>
+<h1>Mini leaderboard</h1>
+<div id="container">
+  <div class="row">
+    <div class="name">3. Ballerup Sjangelig</div><div class="score">430</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Alugod</div><div class="score">580</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Skovlunde Spejderne</div><div class="score">310</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Ballerup Spejder Gruppe</div><div class="score">640</div>
+  </div>
+
+  <div class="row">
+    <div class="name">Mjølner</div><div class="score">495</div>
+  </div>
+</div>
+
+<a href="miniOpg1.html" class="button">Opgave 1 </a>
+<a href="miniOpg2.html" class="button">Opgave 2 </a>
+<a href="miniOpg3.html" class="button">Opgave 3 </a>
+<a href="miniOpg4.html" class="button">Opgave 4 </a>
+<a href="miniOpg5.html" class="button">Opgave 5 </a>
+<a href="miniOpg6.html" class="button">Opgave 6 </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let elements = []
+  let container = document.querySelector('#container')
+  // Add each row to the array
+  container.querySelectorAll('.row').forEach(el => elements.push(el))
+  // Clear the container
+  container.innerHTML = ''
+  // Sort the array from highest to lowest
+  elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent)
+  // Put the elements back into the container
+  elements.forEach(e => container.appendChild(e))
+})
+</script>
+
+</body>
+</html>

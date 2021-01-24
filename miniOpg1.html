@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+.text {
+  color: white;
+  background-color: black;
+
+}
+
+.input {
+  color: white;
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 8px;
+}
+</style>
+
+</head>
+<body style="background-color:black;">
+<h1 style="font-size:60px" class="text">Morse kode </h1>
+  <p class="text">Alle bogstaver skal være med småt</p>
+  <input type="text" class="input" Id="kd1" maxlength="1">
+  <input type="text" class="input" Id="kd2" maxlength="1">
+  <input type="text" class="input" Id="kd3" maxlength="1">
+  <input type="text" class="input" Id="kd4" maxlength="1">
+  <input type="text" class="input" Id="kd5" maxlength="1">
+  <input type="text" class="input" Id="kd6" maxlength="1">
+  <input type="text" class="input" Id="kd7" maxlength="1">
+  <input type="text" class="input" Id="kd8" maxlength="1">
+  <input type="text" class="input" Id="kd9" maxlength="1">
+  <input type="text" class="input" Id="kd10" maxlength="1">
+  <input type="text" class="input" Id="kd11" maxlength="1">
+  <input type="text" class="input" Id="kd12" maxlength="1">
+  <input type="text" class="input" Id="kd13" maxlength="1">
+  <input type="text" class="input" Id="kd14" maxlength="1">
+  <input type="text" class="input" Id="kd15" maxlength="1">
+  <input type="text" class="input" Id="kd16" maxlength="1">
+  <input type="text" class="input" Id="kd17" maxlength="1">
+  <input type="text" class="input" Id="kd18" maxlength="1">
+  <button class="text" style="border: none;"onclick="answer()"> Submit</button> <br>
+  <p class="text" Id="hidden">  </p>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(".input").keyup(function() {
+  if (this.value.length == this.maxLength) {
+    var $next = $(this).next('.input');
+    if ($next.length)
+      $(this).next('.input').focus();
+    else
+      $(this).blur();
+  }
+});
+
+function answer() {
+ if ((document.getElementById('kd1').value + document.getElementById('kd2').value + document.getElementById('kd3').value + document.getElementById('kd4').value + document.getElementById('kd5').value + document.getElementById('kd6').value + document.getElementById('kd7').value + document.getElementById('kd8').value + document.getElementById('kd9').value + document.getElementById('kd10').value + document.getElementById('kd11').value + document.getElementById('kd12').value + document.getElementById('kd13').value + document.getElementById('kd14').value + document.getElementById('kd15').value + document.getElementById('kd16').value + document.getElementById('kd17').value + document.getElementById('kd18').value) == 'divitionsturnering') {
+    window.open("korrekt.html","_self");
+  }
+  else{
+  	window.open("forkert.html","_self");
+  }
+}
+</script>
+</body>
+</html>
